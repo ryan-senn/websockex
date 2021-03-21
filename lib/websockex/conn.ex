@@ -153,7 +153,7 @@ defmodule WebSockex.Conn do
     case :gen_tcp.connect(
            String.to_charlist(conn.host),
            conn.port,
-           [:binary, active: false, packet: 0],
+           [:inet6, :binary, active: false, packet: 0],
            conn.socket_connect_timeout
          ) do
       {:ok, socket} ->
